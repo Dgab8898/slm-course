@@ -1,4 +1,6 @@
+import { protect } from "../middleware/authMiddleware.js";
 import express from "express";
+
 import {
   getTasks,
   addTask,
@@ -8,9 +10,12 @@ import {
 
 const router = express.Router();
 
-router.get("/", getTasks);
-router.post("/", addTask);
-router.put("/:id", updateTask);
-router.delete("/:id", deleteTask);
+router.get("/", protect, getTasks);
+
+router.post("/", protect, addTask);
+
+router.put("/:id", protect, updateTask);
+
+router.delete("/:id", protect, deleteTask);
 
 export default router;
