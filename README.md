@@ -34,10 +34,11 @@ tour-package-management-system/
 ---
 
 ## Setup Instructions
-```bash
+```text
 1. **Clone the repository**
+...
 
-```bash
+```text
 git clone git@github.com:Dgab8898/tour-package-management-system.git
 cd tour-package-management-system/backend
 
