@@ -41,22 +41,22 @@ tour-package-management-system/
 git clone git@github.com:Dgab8898/tour-package-management-system.git
 cd tour-package-management-system/backend
 
-2. **Install dependencies**
+2. ##**Install dependencies**
 '''bash
 npm install
-3. **Create a .env file**
+3. ## **Create a .env file**
 4.  **Start the backend with PM2**
 pm2 start src/server.js --name tour-package
 pm2 save
 pm2 status
 ...
 
-5. **Run tests**
+5. ## **Run tests**
 ```bash
 npm test
 ...
 
-## Deployment
+## **Deployment**
 ```text
 - AWS EC2 Instance runs Node.js backend
 - PM2 manages backend process (tour-package)
@@ -64,7 +64,7 @@ npm test
 - GitHub Actions automates tests and deployment
 '''
 
-## CI/CD
+## **CI/CD**
 ```text
 - Backend workflow runs on pushes to main and taskfeatures branches
  - Automated steps:
@@ -74,7 +74,7 @@ npm test
 - Deploy backend using PM2
 '''
 
-## Access
+## **Access**
 ```text
 Backend API accessible at:
 http://<EC2_PUBLIC_IP>:5000
@@ -82,11 +82,11 @@ http://<EC2_PUBLIC_IP>:5000
 - MongoDB container: mongo on port 27017
 '''
 
-## License
+## **License**
 ```text
 Copyright (C) David Gabriel 2026
 ...
-## References
+## **References**
 ```text
 Node.js. (2026). Node.js Documentation. https://nodejs.org
 Express.js. (2026). Express.js Guide. https://expressjs.com
