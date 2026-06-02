@@ -15,17 +15,21 @@ A Node.js backend system for managing tour packages, deployed on AWS EC2 with Mo
 ---
 
 ## Project Structure
-...
+
+```text
 tour-package-management-system/
 │
-├─ backend/ # Node.js backend source code
-├─ frontend/ # React frontend (if applicable)
-├─ docs/ # Documentation
-├─ .github/workflows/ # GitHub Actions CI/CD workflows
-├─ design-patterns/ # Design pattern examples
-└─ README.md
-'''
-
+├── backend/              # Node.js backend source code
+├── frontend/             # React frontend
+├── docs/                 # Project documentation
+├── design-patterns/      # Design pattern examples
+├── python-oop/           # Python OOP exercises
+├── src/                  # Shared source files
+├── .github/
+│   └── workflows/        # GitHub Actions CI/CD workflows
+├── README.md
+└── package.json
+```
 ---
 
 ## Setup Instructions
