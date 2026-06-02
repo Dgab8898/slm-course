@@ -1,5 +1,6 @@
 # Tour Package Management System
-'''text
+
+```text
 A Node.js backend system for managing tour packages, deployed on AWS EC2 with MongoDB and PM2, with CI/CD via GitHub Actions.
 ...
 ---
@@ -11,7 +12,7 @@ A Node.js backend system for managing tour packages, deployed on AWS EC2 with Mo
 - PM2 process manager deployment
 - Continuous Integration / Continuous Deployment (CI/CD) using GitHub Actions
 - Automated backend tests
-'''
+```
 ---
 
 ## Project Structure
@@ -34,7 +35,7 @@ tour-package-management-system/
 
 ## Setup Instructions
 ```bash
-1. ** Clone the repository **
+1. **Clone the repository**
 
 ```bash
 git clone git@github.com:Dgab8898/tour-package-management-system.git
