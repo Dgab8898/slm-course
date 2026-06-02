@@ -15,7 +15,7 @@ A Node.js backend system for managing tour packages, deployed on AWS EC2 with Mo
 ```
 ---
 
-## Project Structure
+##  Project Structure
 
 ```text
 tour-package-management-system/
@@ -31,7 +31,6 @@ tour-package-management-system/
 ├── README.md
 └── package.json
 ```
----
 
 ## Setup Instructions
 ```text
