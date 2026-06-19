@@ -1,0 +1,78 @@
+import { useEffect, useState } from "react";
+import API from "../api";
+
+function Home() {
+  const [tours, setTours] = useState([]);
+
+  useEffect(() => {
+    API.get("/tasks")
+      .then((res) => {
+        console.log("DATA:", res.data);
+        setTours(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  return (
+    <div style={{ padding: "20px", fontFamily: "Arial" }}>
+      <h1>🌍 Tour Packages</h1>
+
+      <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
+        {tours.map((tour) => (
+          <div
+            key={tour._id}
+            style={{
+              width: "260px",
+              border: "1px solid #ddd",
+              borderRadius: "12px",
+              overflow: "hidden",
+              boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
+            }}
+          >
+            {/* IMAGE */}
+            <img
+              src={tour.image}
+              alt={tour.title}
+              style={{ width: "100%", height: "160px", objectFit: "cover" }}
+            />
+
+            <div style={{ padding: "12px" }}>
+              {/* TITLE */}
+              <h3>{tour.title}</h3>
+
+              {/* DESCRIPTION */}
+              <p style={{ fontSize: "13px", color: "#666" }}>
+                {tour.description}
+              </p>
+
+              {/* EXTRA FIELDS */}
+              <p>📍 {tour.location}</p>
+              <p>⏱ {tour.duration}</p>
+              <p>⭐ {tour.rating}</p>
+              <p><b>${tour.price}</b></p>
+
+              {/* BUTTON */}
+              <button
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  background: "black",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "6px",
+                  marginTop: "8px",
+                  cursor: "pointer",
+                }}
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Home;y
+y

@@ -1,0 +1,92 @@
+import { useEffect, useState } from "react";
+import API from "../api";
+
+function Home() {
+  const [tours, setTours] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    API.get("/tasks")
+      .then((res) => {
+        console.log("🔥 FRONTEND DATA:", res.data);
+        setTours(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log("API ERROR:", err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <h2 style={{ textAlign: "center" }}>Loading tours...</h2>;
+  }
+
+  return (
+    <div style={{ padding: "30px", fontFamily: "Arial" }}>
+      <h1 style={{ textAlign: "center" }}>🌍 Tour Packages</h1>
+
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "20px",
+          justifyContent: "center",
+        }}
+      >
+        {tours.length === 0 ? (
+          <h3>No tours found</h3>
+        ) : (
+          tours.map((tour) => (
+            <div
+              key={tour._id}
+              style={{
+                width: "260px",
+                borderRadius: "12px",
+                overflow: "hidden",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                background: "#fff",
+              }}
+            >
+              <img
+                src={tour.image}
+                style={{
+                  width: "100%",
+                  height: "160px",
+                  objectFit: "cover",
+                }}
+              />
+
+              <div style={{ padding: "12px" }}>
+                <h3>{tour.title}</h3>
+                <p style={{ fontSize: "13px", color: "#666" }}>
+                  {tour.description}
+                </p>
+
+                <p>📍 {tour.location}</p>
+                <p>⏱ {tour.duration}</p>
+                <p>⭐ {tour.rating}</p>
+                <p><b>${tour.price}</b></p>
+
+                <button
+                  style={{
+                    width: "100%",
+                    padding: "10px",
+                    background: "black",
+                    color: "white",
+                    border: "none",
+                    borderRadius: "6px",
+                  }}
+                >
+                  Book Now
+                </button>
+              </div>
+            </div>
+          ))
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default Home;

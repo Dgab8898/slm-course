@@ -10,7 +10,7 @@ import {
 
 const router = express.Router();
 
-router.get("/", protect, getTasks);
+router.get("/", getTasks);
 
 router.post("/", protect, addTask);
 
